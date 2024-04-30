@@ -1,0 +1,46 @@
+{
+  "name": "vue-tinybase",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "TinyBase Binding for Vue 3",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.mts",
+      "import": "./dist/main.mjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nickmessing/vue-tinybase.git",
+    "directory": "packages/public/vue-tinybase"
+  },
+  "bugs": {
+    "url": "https://github.com/nickmessing/vue-tinybase/issues"
+  },
+  "scripts": {
+    "lint:path": "eslint --ext .ts --fix",
+    "lint": "pnpm run lint:path .",
+    "dev": "NODE_ENV=development tsx watch --clear-screen=false src/main.ts",
+    "build": "pkgroll"
+  },
+  "author": "Nicolai Moraru <dot.nick.dot.messing@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@local/eslint-config-vue-tinybase": "workspace:*",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.12.7",
+    "eslint": "^8.57.0",
+    "pkgroll": "^2.0.2",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "tinybase": "^4.8",
+    "@vue/runtime-core": "^3.3",
+    "@vue/reactivity": "^3.3"
+  }
+}

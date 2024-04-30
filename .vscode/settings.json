@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "vue.complete.casing.props": "camel",
+  "vue.complete.casing.tags": "pascal",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": ["Pinia", "Tinybase", "todos"]
+}
