@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { toRef, shallowRef, computed } from '@vue/reactivity'
+import { watch } from '@vue/runtime-core'
 
 import { onCellChange } from '../../events/custom-store/onCellChange.js'
 
@@ -48,6 +49,7 @@ export function useCell<
     }
     return localRef.value
   })
+  watch([tableIdRef, rowIdRef, cellIdRef], getDataFromStore)
   return {
     data: data,
   }

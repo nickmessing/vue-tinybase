@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { toRef, shallowRef, computed } from '@vue/reactivity'
+import { watch } from '@vue/runtime-core'
 
 import { onValueChange } from '../../events/custom-store/onValueChange.js'
 
@@ -37,6 +38,7 @@ export function useValue<Store extends AnyStore, ValueId extends ValueIdFromSche
     }
     return localRef.value
   })
+  watch([valueIdRef], getDataFromStore)
   return {
     data: data,
   }

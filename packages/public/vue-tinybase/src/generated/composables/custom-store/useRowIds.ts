@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { toRef, shallowRef, computed } from '@vue/reactivity'
+import { watch } from '@vue/runtime-core'
 
 import { onRowIdsChange } from '../../events/custom-store/onRowIdsChange.js'
 
@@ -35,6 +36,7 @@ export function useRowIds<Store extends AnyStore>(
     }
     return localRef.value
   })
+  watch([tableIdRef], getDataFromStore)
   return {
     data: data,
   }

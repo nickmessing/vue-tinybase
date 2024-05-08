@@ -24,6 +24,7 @@ export function addImports(
   isUseListenerUsed = true,
   isShallowRefUsed = false,
   isComputedUsed = false,
+  isWatchUsed = false,
   eventListenerToImport?: string,
 ) {
   const program = t.program([...statements])
@@ -37,6 +38,15 @@ export function addImports(
           ...(isComputedUsed ? [t.importSpecifier(t.identifier('computed'), t.identifier('computed'))] : []),
         ],
         t.stringLiteral('@vue/reactivity'),
+      ),
+    )
+  }
+
+  if (isWatchUsed) {
+    program.body.unshift(
+      t.importDeclaration(
+        [t.importSpecifier(t.identifier('watch'), t.identifier('watch'))],
+        t.stringLiteral('@vue/runtime-core'),
       ),
     )
   }

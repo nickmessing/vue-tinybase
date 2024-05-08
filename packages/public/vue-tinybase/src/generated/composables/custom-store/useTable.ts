@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { toRef, shallowRef, computed } from '@vue/reactivity'
+import { watch } from '@vue/runtime-core'
 
 import { onTableChange } from '../../events/custom-store/onTableChange.js'
 
@@ -38,6 +39,7 @@ export function useTable<Store extends AnyStore, TableId extends TableIdFromSche
     }
     return localRef.value
   })
+  watch([tableIdRef], getDataFromStore)
   return {
     data: data,
   }

@@ -55,7 +55,16 @@ export async function handleStoreInterfaceDeclaration(path: NodePath<t.TSInterfa
     )
 
     const file = t.file(
-      addImports(path, statements, parameterNames.length > 0, false, true, true, `on${fieldName}Change`),
+      addImports(
+        path,
+        statements,
+        parameterNames.length > 0,
+        false,
+        true,
+        true,
+        parameterNames.length > 0,
+        `on${fieldName}Change`,
+      ),
     )
     for (const rule of rulesToDisable) {
       t.addComment(file, 'leading', ` eslint-disable ${rule} `, false)

@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { toRef, shallowRef, computed } from '@vue/reactivity'
+import { watch } from '@vue/runtime-core'
 
 import { onRowCountChange } from '../../events/custom-store/onRowCountChange.js'
 
@@ -34,6 +35,7 @@ export function useRowCount<Store extends AnyStore>(
     }
     return localRef.value
   })
+  watch([tableIdRef], getDataFromStore)
   return {
     data: data,
   }

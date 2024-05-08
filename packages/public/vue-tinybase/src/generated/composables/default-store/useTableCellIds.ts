@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { toRef, shallowRef, computed } from '@vue/reactivity'
+import { watch } from '@vue/runtime-core'
 
 import { useStore } from '../../../composables/useStore.js'
 import { onTableCellIdsChange } from '../../events/custom-store/onTableCellIdsChange.js'

@@ -74,6 +74,13 @@ export function generateComposableFunction(
     ),
   ])
 
+  const watchStatement = t.expressionStatement(
+    t.callExpression(t.identifier('watch'), [
+      t.arrayExpression(parameterNames.map(parameterName => t.identifier(`${parameterName}Ref`))),
+      t.identifier('getDataFromStore'),
+    ]),
+  )
+
   const returnStatement = t.returnStatement(
     t.objectExpression([t.objectProperty(t.identifier('data'), t.identifier('data'))]),
   )
@@ -84,8 +91,11 @@ export function generateComposableFunction(
     getDataFromStoreStatement,
     eventListenerCallStatement,
     dataComputedStatement,
-    returnStatement,
   )
+  if (parameterNames.length > 0) {
+    statements.push(watchStatement)
+  }
+  statements.push(returnStatement)
 
   const functionDeclaration = t.functionDeclaration(
     t.identifier(`use${fieldName}`),
