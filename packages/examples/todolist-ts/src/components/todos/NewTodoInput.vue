@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useStore } from 'vue-tinybase/typed'
+import { useStore } from 'vue-tinybase'
 
 const store = useStore()
 

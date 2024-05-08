@@ -2,5 +2,13 @@
   "name": "vue-tinybase-monorepo",
   "version": "0.1.0",
   "author": "Nicolai Moraru <dot.nick.dot.messing@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev:todolist-ts-example": "cd packages/examples/todolist-ts && pnpm run dev",
+    "dev:vue-tinybase": "cd packages/public/vue-tinybase && pnpm run dev",
+    "dev": "run-p dev:*"
+  },
+  "devDependencies": {
+    "npm-run-all2": "^6.1.2"
+  }
 }

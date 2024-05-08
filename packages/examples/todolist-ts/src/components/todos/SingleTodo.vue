@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { nextTick, ref } from 'vue'
-import { useCell, useStore } from 'vue-tinybase/typed'
+import { cellRef, useStore } from 'vue-tinybase'
 
 const props = defineProps<{
   rowId: string
 }>()
 
-const isCompleted = useCell('todos', () => props.rowId, 'completed')
+const isCompleted = cellRef('todos', () => props.rowId, 'completed')
 
-const todoText = useCell('todos', () => props.rowId, 'text')
+const todoText = cellRef('todos', () => props.rowId, 'text')
 const inputValue = ref('')
 const inputReference = ref<HTMLInputElement>()
 const isEditing = ref(false)
 
 async function enterEditingMode() {
   isEditing.value = true
-  inputValue.value = todoText.value
+  inputValue.value = todoText.value ?? ''
   await nextTick()
   inputReference.value?.focus()
 }

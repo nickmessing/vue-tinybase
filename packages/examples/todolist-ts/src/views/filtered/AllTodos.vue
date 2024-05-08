@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useStore, useTable } from 'vue-tinybase/typed'
+import { useStore, useTable } from 'vue-tinybase'
 
 import TodosList from '@/components/todos/TodosList.vue'
 
-const table = useTable('todos')
+const { data: table } = useTable('todos')
 const rowIds = computed(() => Object.keys(table.value))
 
 const store = useStore()
