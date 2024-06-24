@@ -6,7 +6,8 @@
   "scripts": {
     "dev:todolist-ts-example": "cd packages/examples/todolist-ts && pnpm run dev",
     "dev:vue-tinybase": "cd packages/public/vue-tinybase && pnpm run dev",
-    "dev": "run-p dev:*"
+    "dev": "run-p dev:*",
+    "docs:build": "cd packages/private/docs && pnpm run build"
   },
   "devDependencies": {
     "npm-run-all2": "^6.1.2",

@@ -8,7 +8,9 @@ const { Layout } = DefaultTheme
 <template>
   <Layout>
     <template #sidebar-nav-before>
-      <VPSwitchStoreStyle />
+      <ClientOnly>
+        <VPSwitchStoreStyle />
+      </ClientOnly>
     </template>
   </Layout>
 </template>
