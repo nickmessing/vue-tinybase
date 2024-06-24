@@ -1,6 +1,6 @@
 {
   "name": "@local/eslint-config-vue-tinybase",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "private": true,
   "main": "index.cjs",
   "author": "Nicolai Moraru <dot.nick.dot.messing@gmail.com>",
