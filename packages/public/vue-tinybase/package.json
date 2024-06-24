@@ -3,16 +3,16 @@
   "version": "0.2.2",
   "type": "module",
   "description": "TinyBase Binding for Vue 3",
-  "module": "./dist/main.mjs",
-  "types": "./dist/main.d.mts",
+  "module": "./dist/lib.mjs",
+  "types": "./dist/lib.d.mts",
   "exports": {
     ".": {
-      "types": "./dist/main.d.mts",
-      "import": "./dist/main.mjs"
+      "types": "./dist/lib.d.mts",
+      "import": "./dist/lib.mjs"
     },
     "./custom-store": {
-      "types": "./dist/custom-store/main.d.mts",
-      "import": "./dist/custom-store/main.mjs"
+      "types": "./dist/custom-store/lib.d.mts",
+      "import": "./dist/custom-store/lib.mjs"
     }
   },
   "repository": {
@@ -27,10 +27,7 @@
     "lint:path": "eslint --ext .ts --fix",
     "lint": "pnpm run lint:path .",
     "dev": "pkgroll --tsconfig=tsconfig.package.json --watch",
-    "build": "pkgroll --tsconfig=tsconfig.package.json",
-    "generate:00_generate": "tsx scripts/generate/main.ts",
-    "generate:01_format": "pnpm run lint:path src/generated",
-    "generate": "run-s generate:*"
+    "build": "pkgroll --tsconfig=tsconfig.package.json"
   },
   "author": "Nicolai Moraru <dot.nick.dot.messing@gmail.com>",
   "license": "MIT",
@@ -38,21 +35,11 @@
     "dist"
   ],
   "devDependencies": {
-    "@babel/generator": "^7.24.5",
-    "@babel/parser": "^7.24.5",
-    "@babel/traverse": "^7.24.5",
-    "@babel/types": "^7.24.5",
     "@local/eslint-config-vue-tinybase": "workspace:*",
     "@tsconfig/node20": "^20.1.4",
-    "@types/babel__generator": "^7.6.8",
-    "@types/babel__traverse": "^7.20.5",
-    "@types/node": "^20.12.7",
     "eslint": "^8.57.0",
-    "mkdirp": "^3.0.1",
-    "node-fetch": "^3.3.2",
-    "pkgroll": "^2.0.2",
-    "rimraf": "^5.0.5",
-    "tsx": "^4.9.0",
+    "pkgroll": "^2.1.1",
+    "tsx": "^4.15.6",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {

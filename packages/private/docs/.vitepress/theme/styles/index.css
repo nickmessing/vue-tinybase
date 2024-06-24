@@ -1,0 +1,10 @@
+:root {
+  --vp-c-brand-1: hsl(338, 78%, 48%);
+  --vp-c-brand-2: hsl(338, 61%, 26%);
+  --vp-c-brand-3: hsl(338, 55%, 10%);
+  --vp-c-brand-soft: hsla(338, 61%, 26%, 0.14);
+}
+
+.blue {
+  color: hsl(215, 78%, 48%);
+}

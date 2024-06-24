@@ -1,10 +1,7 @@
-import { onScopeDispose } from '@vue/reactivity'
-import { watch } from '@vue/runtime-core'
+import { onScopeDispose, ref } from '@vue/reactivity'
+import { watchEffect } from '@vue/runtime-core'
 
 import type { AnyStore } from '../types.js'
-import type { WatchSource } from '@vue/runtime-core'
-
-type MultiWatchSources = (WatchSource<unknown> | object)[]
 
 export type UseListenerOptions = {
   immediate?: boolean
@@ -17,7 +14,6 @@ const useListenerDefaultOptions = {
 export function useListener<Store extends AnyStore>(
   store: Store,
   listenerCreator: (store: Store) => string,
-  dependencies?: WatchSource | MultiWatchSources,
   options?: UseListenerOptions,
 ) {
   const { immediate } = {
@@ -25,38 +21,43 @@ export function useListener<Store extends AnyStore>(
     ...options,
   }
 
-  let listener: string | undefined
+  const isListening = ref(immediate)
+  const listenerId = ref<string>()
 
   function startListening() {
-    if (listener) {
-      stopListening()
+    if (isListening.value) {
+      return
     }
 
-    listener = listenerCreator(store)
+    isListening.value = true
   }
 
   function stopListening() {
-    if (listener) {
-      store.delListener(listener)
-      listener = undefined
+    if (!isListening.value) {
+      return
+    }
+
+    isListening.value = false
+  }
+
+  function listenerCleanup() {
+    if (listenerId.value) {
+      store.delListener(listenerId.value)
+      listenerId.value = undefined
     }
   }
 
-  if (immediate) {
-    startListening()
-  }
-  onScopeDispose(stopListening)
+  watchEffect(() => {
+    listenerCleanup()
 
-  if (dependencies) {
-    watch(dependencies, () => {
-      if (listener) {
-        stopListening()
-        startListening()
-      }
-    })
-  }
+    if (isListening.value) {
+      listenerId.value = listenerCreator(store)
+    }
+  })
 
-  return { stopListening, startListening }
+  onScopeDispose(listenerCleanup)
+
+  return { stopListening, startListening, listenerId, isListening }
 }
 
 export type UseListenerResult = ReturnType<typeof useListener>

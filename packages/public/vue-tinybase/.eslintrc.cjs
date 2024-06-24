@@ -2,7 +2,7 @@ module.exports = {
   extends: ['@local/vue-tinybase'],
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json', './scripts/tsconfig.json'],
+    project: ['./tsconfig.json'],
     parser: '@typescript-eslint/parser',
   },
   rules: {
@@ -18,7 +18,7 @@ module.exports = {
       },
       typescript: {
         alwaysTryTypes: true,
-        project: ['./tsconfig.json', './scripts/tsconfig.json'],
+        project: ['./tsconfig.json'],
       },
     },
   },
