@@ -1,6 +1,6 @@
 {
   "name": "todolist-ts",
-  "version": "0.0.0",
+  "version": "0.2.2",
   "private": true,
   "type": "module",
   "author": "Nicolai Moraru <dot.nick.dot.messing@gmail.com>",
