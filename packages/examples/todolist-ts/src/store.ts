@@ -13,14 +13,14 @@ export const store = createStore()
     val2: { type: 'number', default: 0 },
     val3: { type: 'boolean', default: false },
   })
-export const store2 = createStore().setValuesSchema({
-  val10: { type: 'string' },
-})
 
 const persister = createLocalPersister(store, 'todos')
 
-await persister.startAutoLoad()
-await persister.startAutoSave()
+// eslint-disable-next-line unicorn/prefer-top-level-await
+void (async () => {
+  await persister.startAutoLoad()
+  await persister.startAutoSave()
+})()
 
 export type Store = typeof store
 

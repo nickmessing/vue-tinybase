@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useTable } from 'vue-tinybase/typed'
+import { useTable } from 'vue-tinybase'
 
 import TodosList from '@/components/todos/TodosList.vue'
 

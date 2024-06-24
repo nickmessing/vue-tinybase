@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Vue TinyBase',
   description: 'Vue + TinyBase Documentation',
@@ -10,11 +9,24 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide' },
-      { text: 'API', link: '/api' },
+      { text: 'Guide', link: '/guide/getting-started', activeMatch: `^/guide/` },
+      { text: 'API', link: '/api', activeMatch: `^/api/` },
     ],
 
     sidebar: {
+      '/guide': [
+        {
+          text: 'Getting Started',
+          items: [
+            { text: '1. Create a store', link: '/guide/getting-started/create-a-store' },
+            { text: '2. Connect to Vue.js app', link: '/guide/getting-started/connect-to-vuejs-app' },
+          ],
+        },
+        {
+          text: 'Usage with TypeScript',
+          link: '/guide/usage-with-typescript',
+        },
+      ],
       '/api': [
         {
           text: 'Store',

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useStore, useTable } from 'vue-tinybase'
+import { injectStore, useTable } from 'vue-tinybase'
 
 import TodosList from '@/components/todos/TodosList.vue'
 
-const { data: table } = useTable('todos')
+const table = useTable('todos')
 const rowIds = computed(() => Object.keys(table.value))
 
-const store = useStore()
+const store = injectStore()
 const allCompleted = computed({
   get: () => rowIds.value.length > 0 && rowIds.value.every(rowId => table.value[rowId].completed),
   set: (value: boolean) => {

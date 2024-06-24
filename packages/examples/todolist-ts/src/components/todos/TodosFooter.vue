@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
-import { useStore, useTable } from 'vue-tinybase'
+import { injectStore, useTable } from 'vue-tinybase'
 
-const { data: table } = useTable('todos')
+const table = useTable('todos')
 const entries = computed(() => Object.entries(table.value))
 const activeEntries = computed(() => entries.value.filter(([_, entry]) => !entry.completed))
 const completedEntries = computed(() => entries.value.filter(([_, entry]) => entry.completed))
 
-const store = useStore()
+const store = injectStore()
 function clearCompleted() {
   for (const entry of completedEntries.value) {
     store.delRow('todos', entry[0])

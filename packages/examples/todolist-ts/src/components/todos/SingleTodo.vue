@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { nextTick, ref } from 'vue'
-import { cellRef, useStore } from 'vue-tinybase'
+import { cellRef, injectStore } from 'vue-tinybase'
 
 const props = defineProps<{
   rowId: string
@@ -26,7 +26,7 @@ function exitEditingMode(save = false) {
   }
 }
 
-const store = useStore()
+const store = injectStore()
 function removeTodo() {
   store.delRow('todos', props.rowId)
 }

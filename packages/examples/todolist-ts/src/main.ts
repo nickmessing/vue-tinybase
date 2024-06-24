@@ -1,14 +1,18 @@
 import 'todomvc-app-css/index.css'
-import { createApp } from 'vue'
-import { createTinybaseVue } from 'vue-tinybase'
+import { createApp, h } from 'vue'
+import { provideStore } from 'vue-tinybase'
 
 import App from '@/App.vue'
 import { router } from '@/router'
 import { store } from '@/store'
 
-const app = createApp(App)
+const app = createApp({
+  setup() {
+    provideStore(store)
+  },
+  render: () => h(App),
+})
 
 app.use(router)
-app.use(createTinybaseVue(store))
 
 app.mount('#app')

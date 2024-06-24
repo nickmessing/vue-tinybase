@@ -10,7 +10,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('src', import.meta.url)),
-      'vue-tinybase/typed': 'vue-tinybase',
       'tinybase/with-schemas/persisters/persister-browser': 'tinybase/persisters/persister-browser',
     },
   },

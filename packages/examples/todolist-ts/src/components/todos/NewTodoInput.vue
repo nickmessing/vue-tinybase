@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useStore } from 'vue-tinybase'
+import { injectStore } from 'vue-tinybase'
 
-const store = useStore()
+const store = injectStore()
 
 const newTodoText = ref('')
 
