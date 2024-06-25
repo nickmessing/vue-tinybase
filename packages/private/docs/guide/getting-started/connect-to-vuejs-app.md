@@ -4,6 +4,16 @@ With your TinyBase store set up, the next step is to connect it to your Vue.js a
 
 For more details on context, you can refer to the [context](/api/store/context) section of the API.
 
+## Add `vue-tinybase` package to your project
+
+First, you need to install the `vue-tinybase` package. You can do this using npm with the following command:
+
+```bash
+npm install --save vue-tinybase
+```
+
+This will add TinyBase to your project’s dependencies, allowing you to import and use it in your code.
+
 ## Provide the Store to Your Vue App
 
 To provide the TinyBase store to your Vue.js app, you need to use the `provideStore` function from `vue-tinybase`. This will make the store available throughout your Vue component tree.
