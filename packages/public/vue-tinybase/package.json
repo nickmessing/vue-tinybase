@@ -39,12 +39,12 @@
     "@tsconfig/node20": "^20.1.4",
     "eslint": "^8.57.0",
     "pkgroll": "^2.1.1",
-    "tsx": "^4.15.6",
-    "typescript": "^5.4.5"
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
   },
   "peerDependencies": {
     "@vue/reactivity": "^3.3",
     "@vue/runtime-core": "^3.3",
-    "tinybase": "^4.8"
+    "tinybase": "^5.0.0"
   }
 }

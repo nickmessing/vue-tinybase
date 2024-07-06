@@ -16,6 +16,6 @@
     "vitepress": "^1.2.3"
   },
   "dependencies": {
-    "vue": "^3.4.26"
+    "vue": "^3.4.31"
   }
 }

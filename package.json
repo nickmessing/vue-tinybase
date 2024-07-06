@@ -10,8 +10,8 @@
     "docs:build": "cd packages/private/docs && pnpm run build"
   },
   "devDependencies": {
-    "npm-run-all2": "^6.1.2",
-    "vite": "^5.2.10",
+    "npm-run-all2": "^6.2.2",
+    "vite": "^5.3.3",
     "vitest": "^1.6.0"
   }
 }
