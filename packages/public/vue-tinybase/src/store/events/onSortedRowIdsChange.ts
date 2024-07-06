@@ -10,8 +10,8 @@ import type { SortedRowIdsListener } from 'tinybase/with-schemas/store'
 export function onSortedRowIdsChange<
   TableId extends TableIdFromSchema<DefaultStoreTablesSchema>,
   CellIdOrUndefined extends CellIdFromSchema<DefaultStoreTablesSchema, TableId> | undefined,
-  Descending extends boolean,
-  Offset extends number,
+  Descending extends boolean | undefined,
+  Offset extends number | undefined,
   Limit extends number | undefined,
 >(
   tableId: MaybeRefOrGetter<TableId>,
@@ -19,7 +19,14 @@ export function onSortedRowIdsChange<
   descending: MaybeRefOrGetter<Descending>,
   offset: MaybeRefOrGetter<Offset>,
   limit: MaybeRefOrGetter<Limit>,
-  listener: SortedRowIdsListener<DefaultStoreSchemas, TableId, CellIdOrUndefined, Descending, Offset, Limit>,
+  listener: SortedRowIdsListener<
+    DefaultStoreSchemas,
+    TableId,
+    CellIdOrUndefined,
+    Descending extends undefined ? false : Descending,
+    Offset extends undefined ? 0 : Offset,
+    Limit
+  >,
   mutator?: MaybeRefOrGetter<boolean>,
   options?: UseListenerOptions,
 ) {
