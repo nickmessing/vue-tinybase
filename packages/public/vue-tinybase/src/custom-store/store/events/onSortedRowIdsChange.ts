@@ -12,8 +12,8 @@ export function onSortedRowIdsChange<
   Store extends AnyStore,
   TableId extends TableIdFromSchema<ExtractTablesSchemaFromStore<Store>>,
   CellIdOrUndefined extends CellIdFromSchema<ExtractTablesSchemaFromStore<Store>, TableId> | undefined,
-  Descending extends boolean,
-  Offset extends number,
+  Descending extends boolean | undefined,
+  Offset extends number | undefined,
   Limit extends number | undefined,
 >(
   store: Store,
@@ -22,7 +22,14 @@ export function onSortedRowIdsChange<
   descending: MaybeRefOrGetter<Descending>,
   offset: MaybeRefOrGetter<Offset>,
   limit: MaybeRefOrGetter<Limit>,
-  listener: SortedRowIdsListener<ExtractSchemasFromStore<Store>, TableId, CellIdOrUndefined, Descending, Offset, Limit>,
+  listener: SortedRowIdsListener<
+    ExtractSchemasFromStore<Store>,
+    TableId,
+    CellIdOrUndefined,
+    Descending extends undefined ? false : Descending,
+    Offset extends undefined ? 0 : Offset,
+    Limit
+  >,
   mutator?: MaybeRefOrGetter<boolean>,
   options?: UseListenerOptions,
 ) {
@@ -32,8 +39,8 @@ export function onSortedRowIdsChange<
       store.addSortedRowIdsListener(
         toValue(tableId),
         toValue(cellId),
-        toValue(descending),
-        toValue(offset),
+        toValue(descending) ?? false,
+        toValue(offset) ?? 0,
         toValue(limit),
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         listener as any,

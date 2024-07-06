@@ -875,6 +875,92 @@ store.setCell('pets', 'felix', 'color', 'black')
 
 </div>
 
+## useSortedRowIds {#use-sorted-row-ids}
+
+The `useSortedRowIds` composable returns a **readonly** reference to the sorted (and optionally, paginated) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) of every [Row](https://tinybase.org/api/store/type-aliases/store/row/) in a given [Table](https://tinybase.org/api/store/type-aliases/store/table/), and registers a listener so that any changes to that result will cause a re-render.
+
+When first accessed, this composable will create a listener so that changes to the sorted [Row](https://tinybase.org/api/store/type-aliases/store/row/) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) will cause a re-render. When the component containing this composable is unmounted, the listener will be automatically removed.
+
+### Parameters
+
+<div class="hide-default-store">
+
+- `store` ([`Store`](https://tinybase.org/api/store/interfaces/store/store/)): The store to listen to.
+
+</div>
+
+- `tableId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<string>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Table](https://tinybase.org/api/store/type-aliases/store/table/) in the [Store](https://tinybase.org/api/store/interfaces/store/store/).
+
+- `cellId`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<string | undefined>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) whose values are used for the sorting, or `undefined` to by sort the [Row](https://tinybase.org/api/store/type-aliases/store/row/) [Id](https://tinybase.org/api/common/type-aliases/identity/id/) itself.
+
+- `descending`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean | undefined>`): Whether the sorting should be in descending order.
+
+- `offset`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<number | undefined>`): The number of [Row](https://tinybase.org/api/store/type-aliases/store/row/) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) to skip for pagination purposes, if any.
+
+- `limit`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<number | undefined>`): The maximum number of [Row](https://tinybase.org/api/store/type-aliases/store/row/) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) to return, or undefined for all.
+
+### Returns
+
+- `ComputedRef<`[`Ids`](https://tinybase.org/api/common/type-aliases/identity/ids/)`>`: A **readonly** reference to an array of the sorted Ids of every Row in the Table.
+
+### Example
+
+```ts
+// store
+export const store = createStore().setTables({
+  pets: {
+    fido: { species: 'dog' },
+    felix: { species: 'cat' },
+  },
+})
+```
+
+<div class="hide-default-store">
+
+```vue
+<script setup lang="ts">
+import { useSortedRowIds, injectStore } from 'vue-tinybase/custom-store'
+
+import { Store1Key } from './store'
+
+const store = injectStore(Store1Key)
+
+const rowIds = useSortedRowIds('pets', 'species', false, 0, undefined, store)
+// UI will show: ["felix", "fido"]
+
+store.setRow('pets', 'cujo', { species: 'wolf' })
+// UI will show: ["felix", "fido", "cujo"]
+</script>
+
+<template>
+  <div>{{ rowIds }}</div>
+</template>
+```
+
+</div>
+
+<div class="hide-custom-store">
+
+```vue
+<script setup lang="ts">
+import { useSortedRowIds, injectStore } from 'vue-tinybase'
+
+const store = injectStore()
+
+const rowIds = useSortedRowIds('pets', 'species', false, 0, undefined)
+// UI will show: ["felix", "fido"]
+
+store.setRow('pets', 'cujo', { species: 'wolf' })
+// UI will show: ["felix", "fido", "cujo"]
+</script>
+
+<template>
+  <div>{{ rowIds }}</div>
+</template>
+```
+
+</div>
+
 ## useTable {#use-table}
 
 The `useTable` composable returns a **readonly** reference to an object containing the data of a single [Table](https://tinybase.org/api/store/type-aliases/store/table/) in a [Store](https://tinybase.org/api/store/interfaces/store/store/), and registers a listener so that any changes to that result will cause a re-render.
