@@ -1,6 +1,6 @@
 {
   "name": "vue-tinybase",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "description": "TinyBase Binding for Vue 3",
   "module": "./dist/lib.mjs",
