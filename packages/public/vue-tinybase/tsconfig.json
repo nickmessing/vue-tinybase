@@ -1,11 +1,10 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.test.ts"],
-  "compilerOptions": {
-    "composite": true,
-    "rootDir": "src",
-    "outDir": "dist",
-    "allowJs": true
-  }
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.test.json"
+    }
+  ]
 }

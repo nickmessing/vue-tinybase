@@ -1,32 +1,26 @@
 import { InjectionKey, defineComponent, h } from 'vue'
 import { expect, test } from 'vitest'
-import { createStore } from 'tinybase'
 import { mount } from '@vue/test-utils'
 import { provideStore } from './provideStore.js'
 import { injectStore } from './injectStore.js'
+import { store, Store } from '../../test-store/store.js'
 
 test('[custom-store/context] (provideStore + injectStore) happy-path', () => {
-  const store1 = createStore().setValue('foo', 'bar')
-  const store2 = createStore().setValue('foo', 'baz')
-  const store1Key = Symbol('store1') as InjectionKey<typeof store1>
-  const store2Key = Symbol('store2') as InjectionKey<typeof store2>
+  const StoreKey = Symbol('InjectedStore') as InjectionKey<Store>
 
   const ChildComponent = defineComponent({
     setup() {
-      const store1 = injectStore(store1Key)
-      const store2 = injectStore(store2Key)
+      const store = injectStore(StoreKey)
 
-      const value1 = store1.getValue('foo')
-      const value2 = store2.getValue('foo')
+      const theme = store.getValue('theme')
 
-      return () => h('div', null, `${value1} ${value2}`)
+      return () => h('div', null, `${theme}`)
     },
   })
 
   const ParentComponent = defineComponent({
     setup() {
-      provideStore(store1Key, store1)
-      provideStore(store2Key, store2)
+      provideStore(StoreKey, store)
 
       return () => h(ChildComponent)
     },
@@ -34,20 +28,20 @@ test('[custom-store/context] (provideStore + injectStore) happy-path', () => {
 
   const wrapper = mount(ParentComponent)
 
-  expect(wrapper.text()).toBe('bar baz')
+  expect(wrapper.text()).toBe('light')
 })
 
 test('[custom-store/context] (injectStore) missing store in context', () => {
-  const storeKey = Symbol('store1')
+  const StoreKey = Symbol('NonExistentStore')
 
   const ChildComponent = defineComponent({
     setup() {
-      injectStore(storeKey)
+      injectStore(StoreKey)
       return () => h('div')
     },
   })
 
   const fn = () => mount(ChildComponent)
 
-  expect(fn).toThrowError('[tinybase-vue] (injectStore): Could not find store with key Symbol(store1)')
+  expect(fn).toThrowError('[tinybase-vue] (injectStore): Could not find store with key Symbol(NonExistentStore)')
 })

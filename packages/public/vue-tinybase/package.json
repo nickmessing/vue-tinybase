@@ -26,8 +26,8 @@
   "scripts": {
     "lint:path": "eslint --ext .ts --fix",
     "lint": "pnpm run lint:path .",
-    "dev": "pkgroll --tsconfig=tsconfig.package.json --watch",
-    "build": "pkgroll --tsconfig=tsconfig.package.json"
+    "dev": "pkgroll --tsconfig=tsconfig.lib.json --watch",
+    "build": "pkgroll --tsconfig=tsconfig.lib.json"
   },
   "author": "Nicolai Moraru <dot.nick.dot.messing@gmail.com>",
   "license": "MIT",

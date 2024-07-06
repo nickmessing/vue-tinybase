@@ -4,15 +4,14 @@ import { createStore } from 'tinybase'
 import { mount } from '@vue/test-utils'
 import { provideStore } from './provideStore.js'
 import { injectStore } from './injectStore.js'
+import { store } from '../test-store/store.js'
 
 test('[default-store/context] (provideStore + injectStore) happy-path', () => {
-  const store = createStore().setValue('foo', 'bar')
-
   const ChildComponent = defineComponent({
     setup() {
       const store = injectStore()
 
-      const value = store.getValue('foo')
+      const value = store.getValue('theme')
 
       return () => h('div', null, `${value}`)
     },
@@ -20,7 +19,7 @@ test('[default-store/context] (provideStore + injectStore) happy-path', () => {
 
   const ParentComponent = defineComponent({
     setup() {
-      provideStore(store as any)
+      provideStore(store)
 
       return () => h(ChildComponent)
     },
@@ -28,7 +27,7 @@ test('[default-store/context] (provideStore + injectStore) happy-path', () => {
 
   const wrapper = mount(ParentComponent)
 
-  expect(wrapper.text()).toBe('bar')
+  expect(wrapper.text()).toBe('light')
 })
 
 test('[default-store/context] (injectStore) missing store in context', () => {
