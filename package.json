@@ -1,6 +1,6 @@
 {
   "name": "vue-tinybase-monorepo",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "Nicolai Moraru <dot.nick.dot.messing@gmail.com>",
   "license": "MIT",
   "type": "module",

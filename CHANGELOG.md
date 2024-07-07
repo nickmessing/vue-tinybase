@@ -1,11 +1,14 @@
-## What's Changed
-* chore(changelog): add cliff configuration
+## What's Changed in v0.4.0
+* 0.4.0
+* chore(changelog): add cliff configuration by @nickmessing
 * fix: fix after upgrade to tinybase v5 by @nickmessing
 * test(mock): add a mock store to base tests on by @nickmessing
 * ci(test): rename test workflow job by @nickmessing
 * ci(test): add test workflow by @nickmessing
 * test(context): provideStore + injectStore by @nickmessing
 * chore(deps): update dependencies by @nickmessing
+
+**Full Changelog**: https://github.com/nickmessing/vue-tinybase/compare/v0.3.1...v0.4.0
 
 ## What's Changed in v0.3.1
 * 0.3.1 by @nickmessing
