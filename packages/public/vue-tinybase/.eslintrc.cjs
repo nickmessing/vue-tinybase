@@ -1,6 +1,7 @@
 module.exports = {
   extends: ['@local/vue-tinybase'],
   parserOptions: {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
     parser: '@typescript-eslint/parser',
@@ -10,6 +11,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     'unicorn/no-null': 'off',
     'unicorn/prevent-abbreviations': 'off',
+    'vue/one-component-per-file': 'off',
   },
   settings: {
     'import/resolver': {

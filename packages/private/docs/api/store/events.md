@@ -26,8 +26,8 @@ Unlike the [addCellListener](https://tinybase.org/api/store/interfaces/store/sto
 - `rowId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Row](https://tinybase.org/api/store/type-aliases/store/row/) to listen to, or `null` as a wildcard.
 - `cellId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) to listen to, or `null` as a wildcard.
 - `listener` ([`CellListener`](https://tinybase.org/api/store/type-aliases/listener/celllistener/)): The function that will be called whenever data in the [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) changes.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`) An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`) An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -100,8 +100,8 @@ Unlike the [addCellIdsListener](https://tinybase.org/api/store/interfaces/store/
 - `tableId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Table](https://tinybase.org/api/store/type-aliases/store/table/) to listen to, or `null` as a wildcard.
 - `rowId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Row](https://tinybase.org/api/store/type-aliases/store/row/) to listen to, or `null` as a wildcard.
 - `listener` ([`CellIdsListener`](https://tinybase.org/api/store/type-aliases/listener/cellidslistener/)): The function that will be called whenever the [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) in a [Row](https://tinybase.org/api/store/type-aliases/store/row/) change.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`) An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`) An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -240,8 +240,8 @@ Unlike the [addHasCellListener](https://tinybase.org/api/store/interfaces/store/
 - `rowId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Row](https://tinybase.org/api/store/type-aliases/store/row/) to listen to, or `null` as a wildcard.
 - `cellId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) to listen to, or `null` as a wildcard.
 - `listener` ([`HasCellListener`](https://tinybase.org/api/store/type-aliases/listener/hascelllistener/)): The function that will be called whenever the matching [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) is added or removed.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`) An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`) An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -314,8 +314,8 @@ Unlike the [addHasRowListener](https://tinybase.org/api/store/interfaces/store/s
 - `tableId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Table](https://tinybase.org/api/store/type-aliases/store/table/) to listen to, or `null` as a wildcard.
 - `rowId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Row](https://tinybase.org/api/store/type-aliases/store/row/) to listen to, or `null` as a wildcard.
 - `listener` ([`HasRowListener`](https://tinybase.org/api/store/type-aliases/listener/hasrowlistener/)): The function that will be called whenever the matching [Row](https://tinybase.org/api/store/type-aliases/store/row/) is added or removed.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -388,8 +388,8 @@ Unlike the [addHasTableCellListener](https://tinybase.org/api/store/interfaces/s
 - `tableId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Table](https://tinybase.org/api/store/type-aliases/store/table/) to listen to, or `null` as a wildcard.
 - `cellId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) to listen to, or `null` as a wildcard.
 - `listener` ([`HasTableCellListener`](https://tinybase.org/api/store/type-aliases/listener/hastablecelllistener/)): The function that will be called whenever the matching [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) is added or removed.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -461,8 +461,8 @@ Unlike the [addHasTableListener](https://tinybase.org/api/store/interfaces/store
 
 - `tableId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Table](https://tinybase.org/api/store/type-aliases/store/table/) to listen to, or `null` as a wildcard.
 - `listener` ([`HasTableListener`](https://tinybase.org/api/store/type-aliases/listener/hastablelistener/)): The function that will be called whenever the matching [Table](https://tinybase.org/api/store/type-aliases/store/table/) is added or removed.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -529,8 +529,8 @@ Unlike the [addHasTablesListener](https://tinybase.org/api/store/interfaces/stor
 </div>
 
 - `listener` ([`HasTablesListener`](https://tinybase.org/api/store/type-aliases/listener/hastableslistener/)): The function that will be called whenever [Tables](https://tinybase.org/api/store/type-aliases/store/tables/) as a whole are added or removed.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -600,8 +600,8 @@ Unlike the [addHasValueListener](https://tinybase.org/api/store/interfaces/store
 
 - `valueId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Value](https://tinybase.org/api/store/type-aliases/store/value/) to listen to, or `null` as a wildcard.
 - `listener` ([`HasValueListener`](https://tinybase.org/api/store/type-aliases/listener/hasvaluelistener/)): The function that will be called whenever the matching [Value](https://tinybase.org/api/store/type-aliases/store/value/) is added or removed.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -668,8 +668,8 @@ Unlike the [addHasValuesListener](https://tinybase.org/api/store/interfaces/stor
 </div>
 
 - `listener` ([`HasValuesListener`](https://tinybase.org/api/store/type-aliases/listener/hasvalueslistener/)): The function that will be called whenever [Values](https://tinybase.org/api/store/type-aliases/store/values/) as a whole are added or removed.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -738,8 +738,8 @@ Unlike the [addRowListener](https://tinybase.org/api/store/interfaces/store/stor
 - `tableId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Table](https://tinybase.org/api/store/type-aliases/store/table/) to listen to, or `null` as a wildcard.
 - `rowId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Row](https://tinybase.org/api/store/type-aliases/store/row/) to listen to, or `null` as a wildcard.
 - `listener` ([`RowListener`](https://tinybase.org/api/store/type-aliases/listener/rowlistener/)): The function that will be called whenever data in the [Row](https://tinybase.org/api/store/type-aliases/store/row/) changes.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -807,8 +807,8 @@ Unlike the [addRowCountListener](https://tinybase.org/api/store/interfaces/store
 
 - `tableId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Table](https://tinybase.org/api/store/type-aliases/store/table/) to listen to, or `null` as a wildcard.
 - `listener` ([`RowCountListener`](https://tinybase.org/api/store/type-aliases/listener/rowcountlistener/)): The function that will be called whenever the count of the [Row](https://tinybase.org/api/store/type-aliases/store/row/) objects in the [Table](https://tinybase.org/api/store/type-aliases/store/table/) changes.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -876,8 +876,8 @@ Unlike the [addRowIdsListener](https://tinybase.org/api/store/interfaces/store/s
 
 - `tableId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Table](https://tinybase.org/api/store/type-aliases/store/table/) to listen to, or `null` as a wildcard.
 - `listener` ([`RowIdsListener`](https://tinybase.org/api/store/type-aliases/listener/rowidslistener/)): The function that will be called whenever the [Row](https://tinybase.org/api/store/type-aliases/store/row/) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) in the [Table](https://tinybase.org/api/store/type-aliases/store/table/) change.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -949,8 +949,8 @@ Unlike the [addSortedRowIdsListener](https://tinybase.org/api/store/interfaces/s
 - `offset` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<number>`): The number of [Row](https://tinybase.org/api/store/type-aliases/store/row/) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) to skip for pagination purposes, if any.
 - `limit` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<undefined | number>`): The maximum number of [Row](https://tinybase.org/api/store/type-aliases/store/row/) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) to return, or `undefined` for all.
 - `listener` ([`SortedRowIdsListener`](https://tinybase.org/api/store/type-aliases/listener/sortedrowidslistener/)): The function that will be called whenever the sorted [Row](https://tinybase.org/api/store/type-aliases/store/row/) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) in the [Table](https://tinybase.org/api/store/type-aliases/store/table/) change.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -1155,8 +1155,8 @@ Unlike the [addTableListener](https://tinybase.org/api/store/interfaces/store/st
 
 - `tableId` ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<`[`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)`>`): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Table](https://tinybase.org/api/store/type-aliases/store/table/) to listen to, or `null` as a wildcard.
 - `listener` ([`TableListener`](https://tinybase.org/api/store/type-aliases/listener/tablelistener/)): The function that will be called whenever data in the [Table](https://tinybase.org/api/store/type-aliases/store/table/) changes.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -1288,8 +1288,8 @@ Unlike the [addTablesListener](https://tinybase.org/api/store/interfaces/store/s
 </div>
 
 - `listener` ([`TablesListener`](https://tinybase.org/api/store/type-aliases/listener/tableslistener/)): The function that will be called whenever tabular data in the [Store](https://tinybase.org/api/store/interfaces/store/store/) changes.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -1359,8 +1359,8 @@ Unlike the [addValueListener](https://tinybase.org/api/store/interfaces/store/st
 
 - `valueId` ([`IdOrNull`](https://tinybase.org/api/common/type-aliases/identity/idornull/)): The [Id](https://tinybase.org/api/common/type-aliases/identity/id/) of the [Value](https://tinybase.org/api/store/type-aliases/store/value/) to listen to, or `null` as a wildcard.
 - `listener` ([`ValueListener`](https://tinybase.org/api/store/type-aliases/listener/valuelistener/)): The function that will be called whenever data in the [Value](https://tinybase.org/api/store/type-aliases/store/value/) changes.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -1427,8 +1427,8 @@ Unlike the [addValueIdsListener](https://tinybase.org/api/store/interfaces/store
 </div>
 
 - `listener` ([`ValueIdsListener`](https://tinybase.org/api/store/type-aliases/listener/valueidslistener/)): The function that will be called whenever the [Value](https://tinybase.org/api/store/type-aliases/store/value/) [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) in the [Store](https://tinybase.org/api/store/interfaces/store/store/) change.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 
@@ -1495,8 +1495,8 @@ Unlike the [addValuesListener](https://tinybase.org/api/store/interfaces/store/s
 </div>
 
 - `listener` ([`ValuesListener`](https://tinybase.org/api/store/type-aliases/listener/valueslistener/)): The function that will be called whenever keyed data in the [Store](https://tinybase.org/api/store/interfaces/store/store/) changes.
-- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 - `options`<span class="blue">?</span> ([`UseListenerOptions`](/api/common/types#use-listener-options)): Options for the listener.
+- `mutator`<span class="blue">?</span> ([`MaybeRefOrGetter`](https://vuejs.org/api/utility-types.html#maybereforgetter)`<boolean>`): An optional boolean that indicates that the listener mutates [Store](https://tinybase.org/api/store/interfaces/store/store/) data.
 
 ### Returns
 

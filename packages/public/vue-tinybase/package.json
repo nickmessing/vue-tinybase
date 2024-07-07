@@ -3,12 +3,12 @@
   "version": "0.3.1",
   "type": "module",
   "description": "TinyBase Binding for Vue 3",
-  "module": "./dist/lib.mjs",
-  "types": "./dist/lib.d.mts",
+  "module": "./dist/default-store/lib.mjs",
+  "types": "./dist/default-store/lib.d.mts",
   "exports": {
     ".": {
-      "types": "./dist/lib.d.mts",
-      "import": "./dist/lib.mjs"
+      "types": "./dist/default-store/lib.d.mts",
+      "import": "./dist/default-store/lib.mjs"
     },
     "./custom-store": {
       "types": "./dist/custom-store/lib.d.mts",

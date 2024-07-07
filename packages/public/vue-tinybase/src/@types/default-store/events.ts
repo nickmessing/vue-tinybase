@@ -1,0 +1,131 @@
+import type {
+  OnHasTablesChangeFunction as OnHasTablesChangeFunctionWithSchemas,
+  OnTablesChangeFunction as OnTablesChangeFunctionWithSchemas,
+  OnTableIdsChangeFunction as OnTableIdsChangeFunctionWithSchemas,
+  OnHasTableChangeFunction as OnHasTableChangeFunctionWithSchemas,
+  OnTableChangeFunction as OnTableChangeFunctionWithSchemas,
+  OnTableCellIdsChangeFunction as OnTableCellIdsChangeFunctionWithSchemas,
+  OnHasTableCellChangeFunction as OnHasTableCellChangeFunctionWithSchemas,
+  OnRowCountChangeFunction as OnRowCountChangeFunctionWithSchemas,
+  OnRowIdsChangeFunction as OnRowIdsChangeFunctionWithSchemas,
+  OnSortedRowIdsChangeFunction as OnSortedRowIdsChangeFunctionWithSchemas,
+  OnHasRowChangeFunction as OnHasRowChangeFunctionWithSchemas,
+  OnRowChangeFunction as OnRowChangeFunctionWithSchemas,
+  OnCellIdsChangeFunction as OnCellIdsChangeFunctionWithSchemas,
+  OnHasCellChangeFunction as OnHasCellChangeFunctionWithSchemas,
+  OnCellChangeFunction as OnCellChangeFunctionWithSchemas,
+  OnHasValuesChangeFunction as OnHasValuesChangeFunctionWithSchemas,
+  OnValuesChangeFunction as OnValuesChangeFunctionWithSchemas,
+  OnValueIdsChangeFunction as OnValueIdsChangeFunctionWithSchemas,
+  OnHasValueChangeFunction as OnHasValueChangeFunctionWithSchemas,
+  OnValueChangeFunction as OnValueChangeFunctionWithSchemas,
+  OnStartTransactionFunction as OnStartTransactionFunctionWithSchemas,
+  OnWillFinishTransactionFunction as OnWillFinishTransactionFunctionWithSchemas,
+  OnDidFinishTransactionFunction as OnDidFinishTransactionFunctionWithSchemas,
+} from './with-schemas/events.js'
+import type {
+  OnHasTablesChangeFunction as OnHasTablesChangeFunctionWithoutSchemas,
+  OnTablesChangeFunction as OnTablesChangeFunctionWithoutSchemas,
+  OnTableIdsChangeFunction as OnTableIdsChangeFunctionWithoutSchemas,
+  OnHasTableChangeFunction as OnHasTableChangeFunctionWithoutSchemas,
+  OnTableChangeFunction as OnTableChangeFunctionWithoutSchemas,
+  OnTableCellIdsChangeFunction as OnTableCellIdsChangeFunctionWithoutSchemas,
+  OnHasTableCellChangeFunction as OnHasTableCellChangeFunctionWithoutSchemas,
+  OnRowCountChangeFunction as OnRowCountChangeFunctionWithoutSchemas,
+  OnRowIdsChangeFunction as OnRowIdsChangeFunctionWithoutSchemas,
+  OnSortedRowIdsChangeFunction as OnSortedRowIdsChangeFunctionWithoutSchemas,
+  OnHasRowChangeFunction as OnHasRowChangeFunctionWithoutSchemas,
+  OnRowChangeFunction as OnRowChangeFunctionWithoutSchemas,
+  OnCellIdsChangeFunction as OnCellIdsChangeFunctionWithoutSchemas,
+  OnHasCellChangeFunction as OnHasCellChangeFunctionWithoutSchemas,
+  OnCellChangeFunction as OnCellChangeFunctionWithoutSchemas,
+  OnHasValuesChangeFunction as OnHasValuesChangeFunctionWithoutSchemas,
+  OnValuesChangeFunction as OnValuesChangeFunctionWithoutSchemas,
+  OnValueIdsChangeFunction as OnValueIdsChangeFunctionWithoutSchemas,
+  OnHasValueChangeFunction as OnHasValueChangeFunctionWithoutSchemas,
+  OnValueChangeFunction as OnValueChangeFunctionWithoutSchemas,
+  OnStartTransactionFunction as OnStartTransactionFunctionWithoutSchemas,
+  OnWillFinishTransactionFunction as OnWillFinishTransactionFunctionWithoutSchemas,
+  OnDidFinishTransactionFunction as OnDidFinishTransactionFunctionWithoutSchemas,
+} from './without-schemas/events.js'
+
+export type OnHasTablesChangeFunction = OnHasTablesChangeFunctionWithSchemas & OnHasTablesChangeFunctionWithoutSchemas
+export type OnTablesChangeFunction = OnTablesChangeFunctionWithSchemas & OnTablesChangeFunctionWithoutSchemas
+export type OnTableIdsChangeFunction = OnTableIdsChangeFunctionWithSchemas & OnTableIdsChangeFunctionWithoutSchemas
+export type OnHasTableChangeFunction = OnHasTableChangeFunctionWithSchemas & OnHasTableChangeFunctionWithoutSchemas
+export type OnTableChangeFunction = OnTableChangeFunctionWithSchemas & OnTableChangeFunctionWithoutSchemas
+export type OnTableCellIdsChangeFunction = OnTableCellIdsChangeFunctionWithSchemas &
+  OnTableCellIdsChangeFunctionWithoutSchemas
+export type OnHasTableCellChangeFunction = OnHasTableCellChangeFunctionWithSchemas &
+  OnHasTableCellChangeFunctionWithoutSchemas
+export type OnRowCountChangeFunction = OnRowCountChangeFunctionWithSchemas & OnRowCountChangeFunctionWithoutSchemas
+export type OnRowIdsChangeFunction = OnRowIdsChangeFunctionWithSchemas & OnRowIdsChangeFunctionWithoutSchemas
+export type OnSortedRowIdsChangeFunction = OnSortedRowIdsChangeFunctionWithSchemas &
+  OnSortedRowIdsChangeFunctionWithoutSchemas
+export type OnHasRowChangeFunction = OnHasRowChangeFunctionWithSchemas & OnHasRowChangeFunctionWithoutSchemas
+export type OnRowChangeFunction = OnRowChangeFunctionWithSchemas & OnRowChangeFunctionWithoutSchemas
+export type OnCellIdsChangeFunction = OnCellIdsChangeFunctionWithSchemas & OnCellIdsChangeFunctionWithoutSchemas
+export type OnHasCellChangeFunction = OnHasCellChangeFunctionWithSchemas & OnHasCellChangeFunctionWithoutSchemas
+export type OnCellChangeFunction = OnCellChangeFunctionWithSchemas & OnCellChangeFunctionWithoutSchemas
+export type OnHasValuesChangeFunction = OnHasValuesChangeFunctionWithSchemas & OnHasValuesChangeFunctionWithoutSchemas
+export type OnValuesChangeFunction = OnValuesChangeFunctionWithSchemas & OnValuesChangeFunctionWithoutSchemas
+export type OnValueIdsChangeFunction = OnValueIdsChangeFunctionWithSchemas & OnValueIdsChangeFunctionWithoutSchemas
+export type OnHasValueChangeFunction = OnHasValueChangeFunctionWithSchemas & OnHasValueChangeFunctionWithoutSchemas
+export type OnValueChangeFunction = OnValueChangeFunctionWithSchemas & OnValueChangeFunctionWithoutSchemas
+export type OnStartTransactionFunction = OnStartTransactionFunctionWithSchemas &
+  OnStartTransactionFunctionWithoutSchemas
+export type OnWillFinishTransactionFunction = OnWillFinishTransactionFunctionWithSchemas &
+  OnWillFinishTransactionFunctionWithoutSchemas
+export type OnDidFinishTransactionFunction = OnDidFinishTransactionFunctionWithSchemas &
+  OnDidFinishTransactionFunctionWithoutSchemas
+
+export type {
+  OnHasTablesChangeFunction as OnHasTablesChangeFunctionWithSchemas,
+  OnTablesChangeFunction as OnTablesChangeFunctionWithSchemas,
+  OnTableIdsChangeFunction as OnTableIdsChangeFunctionWithSchemas,
+  OnHasTableChangeFunction as OnHasTableChangeFunctionWithSchemas,
+  OnTableChangeFunction as OnTableChangeFunctionWithSchemas,
+  OnTableCellIdsChangeFunction as OnTableCellIdsChangeFunctionWithSchemas,
+  OnHasTableCellChangeFunction as OnHasTableCellChangeFunctionWithSchemas,
+  OnRowCountChangeFunction as OnRowCountChangeFunctionWithSchemas,
+  OnRowIdsChangeFunction as OnRowIdsChangeFunctionWithSchemas,
+  OnSortedRowIdsChangeFunction as OnSortedRowIdsChangeFunctionWithSchemas,
+  OnHasRowChangeFunction as OnHasRowChangeFunctionWithSchemas,
+  OnRowChangeFunction as OnRowChangeFunctionWithSchemas,
+  OnCellIdsChangeFunction as OnCellIdsChangeFunctionWithSchemas,
+  OnHasCellChangeFunction as OnHasCellChangeFunctionWithSchemas,
+  OnCellChangeFunction as OnCellChangeFunctionWithSchemas,
+  OnHasValuesChangeFunction as OnHasValuesChangeFunctionWithSchemas,
+  OnValuesChangeFunction as OnValuesChangeFunctionWithSchemas,
+  OnValueIdsChangeFunction as OnValueIdsChangeFunctionWithSchemas,
+  OnHasValueChangeFunction as OnHasValueChangeFunctionWithSchemas,
+  OnValueChangeFunction as OnValueChangeFunctionWithSchemas,
+  OnStartTransactionFunction as OnStartTransactionFunctionWithSchemas,
+  OnWillFinishTransactionFunction as OnWillFinishTransactionFunctionWithSchemas,
+  OnDidFinishTransactionFunction as OnDidFinishTransactionFunctionWithSchemas,
+} from './with-schemas/events.js'
+export type {
+  OnHasTablesChangeFunction as OnHasTablesChangeFunctionWithoutSchemas,
+  OnTablesChangeFunction as OnTablesChangeFunctionWithoutSchemas,
+  OnTableIdsChangeFunction as OnTableIdsChangeFunctionWithoutSchemas,
+  OnHasTableChangeFunction as OnHasTableChangeFunctionWithoutSchemas,
+  OnTableChangeFunction as OnTableChangeFunctionWithoutSchemas,
+  OnTableCellIdsChangeFunction as OnTableCellIdsChangeFunctionWithoutSchemas,
+  OnHasTableCellChangeFunction as OnHasTableCellChangeFunctionWithoutSchemas,
+  OnRowCountChangeFunction as OnRowCountChangeFunctionWithoutSchemas,
+  OnRowIdsChangeFunction as OnRowIdsChangeFunctionWithoutSchemas,
+  OnSortedRowIdsChangeFunction as OnSortedRowIdsChangeFunctionWithoutSchemas,
+  OnHasRowChangeFunction as OnHasRowChangeFunctionWithoutSchemas,
+  OnRowChangeFunction as OnRowChangeFunctionWithoutSchemas,
+  OnCellIdsChangeFunction as OnCellIdsChangeFunctionWithoutSchemas,
+  OnHasCellChangeFunction as OnHasCellChangeFunctionWithoutSchemas,
+  OnCellChangeFunction as OnCellChangeFunctionWithoutSchemas,
+  OnHasValuesChangeFunction as OnHasValuesChangeFunctionWithoutSchemas,
+  OnValuesChangeFunction as OnValuesChangeFunctionWithoutSchemas,
+  OnValueIdsChangeFunction as OnValueIdsChangeFunctionWithoutSchemas,
+  OnHasValueChangeFunction as OnHasValueChangeFunctionWithoutSchemas,
+  OnValueChangeFunction as OnValueChangeFunctionWithoutSchemas,
+  OnStartTransactionFunction as OnStartTransactionFunctionWithoutSchemas,
+  OnWillFinishTransactionFunction as OnWillFinishTransactionFunctionWithoutSchemas,
+  OnDidFinishTransactionFunction as OnDidFinishTransactionFunctionWithoutSchemas,
+} from './without-schemas/events.js'
