@@ -38,6 +38,13 @@ export default defineConfig({
           ],
         },
         {
+          text: 'Checkpoints',
+          items: [
+            { text: 'Composables', link: '/api/checkpoints/composables' },
+            { text: 'Context', link: '/api/checkpoints/context' },
+          ],
+        },
+        {
           text: 'Common',
           items: [
             { text: 'Composables', link: '/api/common/composables' },

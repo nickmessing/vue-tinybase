@@ -40,3 +40,5 @@ app.mount('#app')
 In this example, we create a Vue app and use the provideStore function in the setup function to provide the TinyBase store. The render function is used to render the main App component.
 
 After providing the store, you can use `vue-tinybase` [event hooks](/api/store/events), [composables](/api/store/composables), and [writable references](/api/store/references) inside all components of your app. This integration enables you to interact with the store’s state and respond to changes efficiently.
+
+There are similar provide-related functions for [checkpoints](/api/checkpoints/context) that you can use to provide these objects to your app or part of the app.

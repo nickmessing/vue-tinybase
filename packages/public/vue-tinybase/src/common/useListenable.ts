@@ -35,7 +35,7 @@ export const IS_EQUALS: ((thing1: any, thing2: any) => boolean)[] = [
 export const isEqual = (thing1: any, thing2: any) => thing1 === thing2
 
 export const useListenable = (
-  store: any,
+  eventBus: any,
   listenable: string,
   returnType: ReturnType,
   args: Readonly<MaybeRefOrGetter<ListenerArgument>[]> = EMPTY_ARRAY,
@@ -43,7 +43,7 @@ export const useListenable = (
   const lastResult = ref(DEFAULTS[returnType])
   const getResult = () => {
     const nextResult =
-      store?.[(returnType == ReturnType.Boolean ? _HAS : GET) + listenable]?.(...args.map(arg => toValue(arg))) ??
+      eventBus?.[(returnType == ReturnType.Boolean ? _HAS : GET) + listenable]?.(...args.map(arg => toValue(arg))) ??
       DEFAULTS[returnType]
     if (!(IS_EQUALS[returnType] ?? isEqual)(nextResult, lastResult.value)) {
       lastResult.value = nextResult
@@ -52,7 +52,7 @@ export const useListenable = (
   }
 
   const { startListening, isListening } = useListener(
-    store,
+    eventBus,
     (returnType == ReturnType.Boolean ? HAS : EMPTY_STRING) + listenable,
     args,
     getResult,

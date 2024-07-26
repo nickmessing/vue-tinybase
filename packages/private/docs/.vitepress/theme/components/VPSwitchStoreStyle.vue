@@ -1,25 +1,12 @@
 <script lang="ts" setup>
 // copy/pasted from https://github.com/vuejs/vitepress/blob/8fef47848bd3418014b06eea1337b1e66e0473c6/src/client/theme-default/components/VPSwitchAppearance.vue
 // minor modifications
-import { watch, ref } from 'vue'
 import VPSwitch from './VPSwitch.vue'
 
-const isDefaultStoreSelected = ref(localStorage.getItem('isDefaultStoreSelected') !== 'false')
-
-watch(
-  isDefaultStoreSelected,
-  () => {
-    localStorage.setItem('isDefaultStoreSelected', isDefaultStoreSelected.value.toString())
-    if (isDefaultStoreSelected.value) {
-      document.body.classList.add('default-store')
-      document.body.classList.remove('custom-store')
-    } else {
-      document.body.classList.remove('default-store')
-      document.body.classList.add('custom-store')
-    }
-  },
-  { immediate: true },
-)
+const isDefaultStoreSelected = defineModel({
+  type: Boolean,
+  required: true,
+})
 </script>
 
 <template>

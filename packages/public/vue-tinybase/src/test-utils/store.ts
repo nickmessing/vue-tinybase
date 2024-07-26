@@ -1,10 +1,12 @@
 import { createStore } from 'tinybase/with-schemas'
 import { defineComponent, h } from 'vue'
 
+import { provideCheckpoints as provideCheckpointsCS } from '../custom-store/checkpoints/context.js'
 import { provideStore as provideStoreCS } from '../custom-store/store/context.js'
+import { provideCheckpoints as provideCheckpointsDS } from '../default-store/checkpoints/context.js'
 import { provideStore as provideStoreDS } from '../default-store/store/context.js'
 
-import type { AnyStore } from '../@types/_internal/common.js'
+import type { AnyCheckpoints, AnyStore } from '../@types/_internal/common.js'
 import type { InjectionKey } from 'vue'
 
 export const store = createStore()
@@ -173,9 +175,15 @@ export const store = createStore()
 
 export type Store = typeof store
 
+export type ProviderExtraOptions = {
+  checkpointsKey?: symbol | InjectionKey<AnyCheckpoints>
+  checkpoints?: AnyCheckpoints
+}
+
 export function providerWrapper(
   child: ReturnType<typeof defineComponent>,
   keyOrStore?: symbol | InjectionKey<Store> | AnyStore,
+  options?: ProviderExtraOptions,
 ) {
   return defineComponent({
     setup() {
@@ -188,6 +196,16 @@ export function providerWrapper(
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         provideStoreDS(store as any)
       }
+
+      if (options?.checkpoints) {
+        if (options.checkpointsKey) {
+          provideCheckpointsCS(options.checkpointsKey, options.checkpoints)
+        } else {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          provideCheckpointsDS(options.checkpoints as any)
+        }
+      }
+
       return () => h(child)
     },
   })

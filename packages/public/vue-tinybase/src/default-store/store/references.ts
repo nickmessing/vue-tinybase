@@ -11,7 +11,7 @@ import type {
   TablesReferenceFunction,
   ValueReferenceFunction,
   ValuesReferenceFunction,
-} from '../../@types/default-store/references.js'
+} from '../../@types/default-store/index.js'
 import type { MaybeRefOrGetter } from '@vue/reactivity'
 import type { Id } from 'tinybase'
 

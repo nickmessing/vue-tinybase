@@ -5,14 +5,13 @@ import { ADD, LISTENER } from './strings.js'
 
 import type { ListenerArgument, UseListenerOptions } from '../@types/_internal/common.js'
 import type { MaybeRefOrGetter } from '@vue/reactivity'
-import type { Store } from 'tinybase'
 
 const useListenerDefaultOptions = {
   immediate: true,
 }
 
 export function useListener(
-  store: Store,
+  eventBus: any,
   event: string,
   preArgs: Readonly<MaybeRefOrGetter<ListenerArgument>[]>,
   listener: (...args: any[]) => void,
@@ -45,7 +44,8 @@ export function useListener(
 
   function listenerCleanup() {
     if (listenerId.value) {
-      store.delListener(listenerId.value)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+      eventBus.delListener(listenerId.value)
       listenerId.value = undefined
     }
   }
@@ -56,7 +56,7 @@ export function useListener(
     if (isListening.value) {
       const args = [...preArgs.map(arg => toValue(arg)), listener, ...postArgs.map(arg => toValue(arg))]
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-      listenerId.value = (store as any)[`${ADD}${event}${LISTENER}`](...args)
+      listenerId.value = eventBus[`${ADD}${event}${LISTENER}`](...args)
     }
   })
 

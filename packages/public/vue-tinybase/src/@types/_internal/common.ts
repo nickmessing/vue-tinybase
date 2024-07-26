@@ -1,8 +1,13 @@
 import type { Ref } from '@vue/reactivity'
-import type { Store as StoreWithoutSchemas, Id, IdOrNull } from 'tinybase'
-import type { OptionalSchemas, Store as StoreWithSchemas } from 'tinybase/with-schemas'
+import type { Store as StoreWithoutSchemas, Id, IdOrNull, Checkpoints as CheckpointsWithoutSchemas } from 'tinybase'
+import type {
+  OptionalSchemas,
+  Store as StoreWithSchemas,
+  Checkpoints as CheckpointsWithSchemas,
+} from 'tinybase/with-schemas'
 
 export type AnyStore = StoreWithoutSchemas | StoreWithSchemas<any>
+export type AnyCheckpoints = CheckpointsWithoutSchemas | CheckpointsWithSchemas<any>
 
 export type ExtractSchemasFromStore<Store extends AnyStore> =
   Store extends StoreWithSchemas<infer Schema> ? Schema : OptionalSchemas

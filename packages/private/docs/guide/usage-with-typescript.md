@@ -9,7 +9,7 @@ For more information on Schema-based typing, please refer to the [official TinyB
 The following code snippet demonstrates how to define a schema for your store and connect it to all composables imported from `vue-tinybase`:
 
 ```typescript
-import { createStore } from 'tinybase/with-schemas'
+import { createStore, createCheckpoints } from 'tinybase/with-schemas'
 
 // Create a store with schema-based typing
 export const store = createStore()
@@ -27,13 +27,18 @@ export const store = createStore()
     val3: { type: 'boolean', default: false },
   })
 
+// If you want - also create checkpoints
+const checkpoints = createCheckpoints(store)
+
 // Export the store type
 export type Store = typeof store
+export type Checkpoints = typeof checkpoints
 
 // Extend the Vue-Tinybase context with the store type
 declare module 'vue-tinybase' {
   export interface VueTinybaseContext {
     store: Store
+    checkpoints: Checkpoints
   }
 }
 ```

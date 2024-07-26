@@ -9,7 +9,7 @@ import type {
   TablesReferenceFunction,
   ValueReferenceFunction,
   ValuesReferenceFunction,
-} from '../../@types/custom-store/references.js'
+} from '../../@types/custom-store/index.js'
 import type { MaybeRefOrGetter } from '@vue/reactivity'
 import type { Store, Id } from 'tinybase'
 
