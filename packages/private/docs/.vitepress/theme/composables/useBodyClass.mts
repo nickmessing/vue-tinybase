@@ -6,6 +6,10 @@ interface UseBodyClassOptions {
 }
 
 export function useBodyClass(value: MaybeRefOrGetter<boolean>, options: UseBodyClassOptions): void {
+  if (typeof document === 'undefined') {
+    return
+  }
+
   const { trueClass } = options
   const { falseClass } = options
 
