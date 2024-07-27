@@ -2,6 +2,13 @@
 
 Checkpoints composables.
 
+<div class="hide-custom-store">
+
+> [!NOTE]
+> To use these composables with the "default" [Checkpoints](https://tinybase.org/api/checkpoints/interfaces/checkpoints/checkpoints/) object, you need to have the object provided with the [`provideCheckpoints`](/api/checkpoints/context#provide-checkpoints) function in a parent component. We recommend providing the store in the `createApp` call just like the `provideStore` is used in the [example in the guide](/guide/getting-started/connect-to-vuejs-app#provide-the-store-to-your-vue-app).
+
+</div>
+
 ## useCheckpoint {#use-checkpoint}
 
 The `useCheckpoint` composable returns the label for a checkpoint, and registers a listener so that any changes to that result will cause a re-render.

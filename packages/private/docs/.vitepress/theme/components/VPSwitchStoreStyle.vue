@@ -19,7 +19,7 @@ const isDefaultStoreSelected = defineModel({
         :aria-checked="isDefaultStoreSelected"
         @click="isDefaultStoreSelected = !isDefaultStoreSelected"
       />
-      <span class="store-style-custom">Multiple</span>
+      <span class="store-style-custom">Argument</span>
     </div>
   </div>
 </template>

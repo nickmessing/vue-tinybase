@@ -2,6 +2,13 @@
 
 Store's event hooks.
 
+<div class="hide-custom-store">
+
+> [!NOTE]
+> To use these event hooks with the "default" store, you need to have the store provided with the [`provideStore`](/api/store/context#provide-store) function in a parent component. We recommend providing the store in the `createApp` call just like the [example in the guide](/guide/getting-started/connect-to-vuejs-app#provide-the-store-to-your-vue-app).
+
+</div>
+
 ## onCellChange {#on-cell-change}
 
 The `onCellChange` event hook registers a listener function with a [Store](https://tinybase.org/api/store/interfaces/store/store/) that will be called whenever data in a [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) changes.

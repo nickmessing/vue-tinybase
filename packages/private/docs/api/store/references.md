@@ -2,6 +2,13 @@
 
 Store's references.
 
+<div class="hide-custom-store">
+
+> [!NOTE]
+> To use these references with the "default" store, you need to have the store provided with the [`provideStore`](/api/store/context#provide-store) function in a parent component. We recommend providing the store in the `createApp` call just like the [example in the guide](/guide/getting-started/connect-to-vuejs-app#provide-the-store-to-your-vue-app).
+
+</div>
+
 > [!IMPORTANT]
 > The references are not deep-reactive, you have to assign a new value to the reference when you want to update the data.
 

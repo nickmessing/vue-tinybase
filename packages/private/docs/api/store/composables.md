@@ -2,6 +2,13 @@
 
 Store's composables.
 
+<div class="hide-custom-store">
+
+> [!NOTE]
+> To use these composables with the "default" store, you need to have the store provided with the [`provideStore`](/api/store/context#provide-store) function in a parent component. We recommend providing the store in the `createApp` call just like the [example in the guide](/guide/getting-started/connect-to-vuejs-app#provide-the-store-to-your-vue-app).
+
+</div>
+
 ## useCell {#use-cell}
 
 The `useCell` composable returns a **readonly** reference to an object containing the value of a single [Cell](https://tinybase.org/api/store/type-aliases/store/cell/) in a given [Row](https://tinybase.org/api/store/type-aliases/store/row/), in a given [Table](https://tinybase.org/api/store/type-aliases/store/table/), and registers a listener so that any changes to that result will cause a re-render.
