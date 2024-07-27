@@ -1,6 +1,6 @@
 # Composables {#composables}
 
-Checkpoinnts composables.
+Checkpoints composables.
 
 ## useCheckpoint {#use-checkpoint}
 
@@ -20,7 +20,7 @@ When first accessed, this composable will create a listener so that changes to t
 
 ### Returns
 
-- `ComputedRef<string | undefined>`: A **readonly** reference to the string label for the requested checkpoint, an empty string if it was never set, or `undefined` if the checkpoint does not exist..
+- `ComputedRef<string | undefined>`: A **readonly** reference to the string label for the requested checkpoint, an empty string if it was never set, or `undefined` if the checkpoint does not exist.
 
 ### Example
 
@@ -28,7 +28,7 @@ When first accessed, this composable will create a listener so that changes to t
 
 ```vue
 <script setup lang="ts">
-import { useCell, injectStore, useCheckpoint } from 'vue-tinybase/custom-store'
+import { injectStore, injectCheckpoints, useCheckpoint } from 'vue-tinybase/custom-store'
 
 import { Store1Key, Checkpoints1Key } from './store'
 
@@ -54,7 +54,7 @@ checkpoints.addCheckpoint('sale')
 
 ```vue
 <script setup lang="ts">
-import { useCell, injectStore, useCheckpoint, injectCheckpoints } from 'vue-tinybase'
+import { injectStore, injectCheckpoints, useCheckpoint } from 'vue-tinybase'
 
 const store = injectStore()
 
@@ -70,6 +70,81 @@ checkpoints.addCheckpoint('sale')
 
 <template>
   <div>{{ checkpointLabel }}</div>
+</template>
+```
+
+</div>
+
+## useCheckpointIds {#use-checkpoint-ids}
+
+The `useCheckpointIds` composable returns an array of the checkpoint [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) being managed by this [Checkpoints](https://tinybase.org/api/checkpoints/interfaces/checkpoints/checkpoints/) object, and registers a listener so that any changes to that result will cause a re-render.
+
+When first accessed, this composable will create a listener so that changes to the checkpoint [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) will cause a re-render. When the component containing this composable is unmounted, the listener will be automatically removed.
+
+<div class="hide-default-store">
+
+### Parameters
+
+- `checkpoints` ([`Checkpoints`](https://tinybase.org/api/checkpoints/interfaces/checkpoints/checkpoints/)): The [`Checkpoints`](https://tinybase.org/api/checkpoints/interfaces/checkpoints/checkpoints/) object to be accessed.
+
+</div>
+
+### Returns
+
+- `ComputedRef<`[`CheckpointIds`](https://tinybase.org/api/checkpoints/type-aliases/identity/checkpointids/)`>`: A **readonly** reference to the [CheckpointIds](https://tinybase.org/api/checkpoints/type-aliases/identity/checkpointids/) array, containing the checkpoint [Ids](https://tinybase.org/api/common/type-aliases/identity/ids/) managed by this [Checkpoints](https://tinybase.org/api/checkpoints/interfaces/checkpoints/checkpoints/) object.
+
+### Example
+
+<div class="hide-default-store">
+
+```vue
+<script setup lang="ts">
+import { injectStore, injectCheckpoints, useCheckpointIds } from 'vue-tinybase/custom-store'
+
+import { Store1Key, Checkpoints1Key } from './store'
+
+const store = injectStore(Store1Key)
+const checkpoints = injectCheckpoints(Checkpoints1Key)
+
+const checkpointIds = useCheckpointIds(checkpoints)
+// UI will show: [[],"0",[]]
+
+store.setCell('pets', 'fido', 'sold', true)
+// UI will show: [["0"],null,[]]
+
+checkpoints.addCheckpoint('sale')
+// UI will show: [["0"],"1",[]]
+</script>
+
+<template>
+  <div>{{ checkpointIds }}</div>
+</template>
+```
+
+</div>
+
+<div class="hide-custom-store">
+
+```vue
+<script setup lang="ts">
+import { injectStore, injectCheckpoints, useCheckpointIds } from 'vue-tinybase'
+
+const store = injectStore()
+
+const checkpoints = injectCheckpoints()
+
+const checkpointIds = useCheckpointIds()
+// UI will show: [[],"0",[]]
+
+store.setCell('pets', 'fido', 'sold', true)
+// UI will show: [["0"],null,[]]
+
+checkpoints.addCheckpoint('sale')
+// UI will show: [["0"],"1",[]]
+</script>
+
+<template>
+  <div>{{ checkpointIds }}</div>
 </template>
 ```
 
