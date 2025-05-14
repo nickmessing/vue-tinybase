@@ -45,6 +45,6 @@
   "peerDependencies": {
     "@vue/reactivity": "^3.3",
     "@vue/runtime-core": "^3.3",
-    "tinybase": "^5.0.0"
+    "tinybase": "^6.0.0"
   }
 }
